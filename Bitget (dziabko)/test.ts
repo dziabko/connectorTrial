@@ -12,7 +12,7 @@ import * as Types from "./types"
 
 
 import axios, { AxiosStatic } from 'axios';
-import { connected } from "process";
+import { connected, exit } from "process";
 
 function delay(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -160,10 +160,12 @@ export async function main() {
     
     // Verify the balance change of the account with closing the open orders (We're assuming we used at least 100USDT on both the open orders)
     if (balanceResp.baseBalance - balanceResp2.baseBalance < 100) {
-        console.log("Balance should have inccreased by at least 100USDT after deleting all open orders");
+        console.log("Balance should have increased by at least 100USDT after deleting all open orders");
     }
 
     await bitgetConnector.stop(openOrderRequest)
+    console.log("Stopped the websocket feed");
+    exit(0);
 }
 
 main();
