@@ -1,4 +1,4 @@
-import { BitgetSpotPublicConnector } from "./bitget-futures-public-connector";
+import { BitgetFuturesPublicConnector } from "./bitget-futures-public-connector";
 import { onMessage } from "./bitget-datahandler";
 import 'dotenv/config';
 import { BitgetFuturesPrivateConnector } from "./bitget-futures-private-connector";
@@ -44,8 +44,6 @@ function handleMessage(data: string): void {
 
 
 export async function main() {
-    console.log("Hello, world!");
-
     const bitgetConnector = new BitgetFuturesPrivateConnector()
     bitgetConnector.connect(onMessage)
 

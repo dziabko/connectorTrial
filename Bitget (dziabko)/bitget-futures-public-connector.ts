@@ -27,7 +27,7 @@ export interface BitgetMarketDepth {
 
 // export interface BitgetTrade { p: string, S: number, v: string, t: number };
 
-export class BitgetSpotPublicConnector implements PublicExchangeConnector {
+export class BitgetFuturesPublicConnector implements PublicExchangeConnector {
 
     public publicWebsocketAddress = 'wss://ws.bitget.com/spot/v1/stream';
     // public publicWebsocketAddress = 'wss://ws.bitget.com/v2/ws/public';
