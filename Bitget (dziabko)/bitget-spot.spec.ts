@@ -1,8 +1,8 @@
 
 import { BatchOrdersRequest, OrderStatusUpdate, Ticker, TopOfBook, Trade } from '../../types';
 
-import { BitgetSpotPublicConnector } from './Bitget-spot-public-connector';
-import { BitgetSpotPrivateConnector } from './Bitget-spot-private-connector';
+import { BitgetFuturesPublicConnector } from './bitget-futures-public-connector';
+import { BitgetFuturesPrivateConnector } from './bitget-futures-private-connector';
 
 global.WebSocket = require('ws');
 import axios from 'axios';
@@ -20,7 +20,7 @@ describe('Bitget: Public connector', () => {
     const mockConfig: any = { symbol: 'mock-symbol', quoteAsset: 'usdt' };
 
     beforeEach(() => {
-        connector = new BitgetSpotPublicConnector(mockGroup, mockConfig);
+        connector = new BitgetFuturesPublicConnector(mockGroup, mockConfig);
     });
 
     afterEach(() => {
@@ -261,7 +261,7 @@ describe('Bitget: Private connector', () => {
 
     it('Can Connect with handshake command', async () => {
 
-        connector = new BitgetSpotPrivateConnector(
+        connector = new BitgetFuturesPrivateConnector(
             mockGroup,
             mockConfig,
             <any>{
@@ -311,7 +311,7 @@ describe('Bitget: Private connector', () => {
 
     it('Can handle OrderStatusUpdate command', async () => {
 
-        connector = new BitgetSpotPrivateConnector(
+        connector = new BitgetFuturesPrivateConnector(
             mockGroup,
             mockConfig,
             <any>{
@@ -405,7 +405,7 @@ describe('Bitget: Private connector', () => {
 
     it.skip('Can handle getCurrentActiveOrders action', async () => {
 
-        connector = new BitgetSpotPrivateConnector(
+        connector = new BitgetFuturesPrivateConnector(
             mockGroup,
             mockConfig,
             <any>{
@@ -467,7 +467,7 @@ describe('Bitget: Private connector', () => {
 
     it.skip('Can handle getBalancePercentage action', async () => {
 
-        connector = new BitgetSpotPrivateConnector(
+        connector = new BitgetFuturesPrivateConnector(
             mockGroup,
             mockConfig,
             <any>{
@@ -524,7 +524,7 @@ describe('Bitget: Private connector', () => {
 
     it.skip('Can handle placeOrders(buy) action', async () => {
 
-        connector = new BitgetSpotPrivateConnector(
+        connector = new BitgetFuturesPrivateConnector(
             mockGroup,
             mockConfig,
             <any>{
@@ -563,7 +563,7 @@ describe('Bitget: Private connector', () => {
 
     it.skip('Can handle placeOrders(sell) action', async () => {
 
-        connector = new BitgetSpotPrivateConnector(
+        connector = new BitgetFuturesPrivateConnector(
             mockGroup,
             mockConfig,
             <any>{

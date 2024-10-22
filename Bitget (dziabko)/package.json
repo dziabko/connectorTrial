@@ -7,5 +7,14 @@
   },
   "author": "dziabko",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "bitget-api-node-sdk": "^2.1.4",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.5",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2"
+  }
 }
