@@ -23,6 +23,10 @@ export function onMessage(data: Types.Serializable[]): void {
     });
 }
 
+export function delay(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // Example usage
 // const exampleData: Types.Serializable[] = [
 //     { id: 1, name: "Item 1" },
